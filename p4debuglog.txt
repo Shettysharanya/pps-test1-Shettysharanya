@@ -1,25 +1,59 @@
-#include<stdio.h>
-void input(int *a, int *b);
-void add(int a, int b, int *sum);
-void output(int a, int b, int sum);
-int main()
-{
-  int a,b,c;
-  printf("enter two numbers\n");
-  input(&a,&b);
-  add(a,b,&c);
-  output(a,b,c);
-  return 0;
-}
-void input(int *a,int *b)
-{
-  scanf("%d%d",a,b);
-}
-void add(int a, int b, int *sum)
-{
-  *sum=a+b;
-}
-void output(int a, int b, int sum)
-{
-  printf("sum of %d+%d=%d",a,b,sum);
-}
+gcc -g p4original.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+gcc -g p4original.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x772: file p4original.c, line 6.
+(gdb) r
+Starting program: /home/runner/pps-test1-Shettysharanya-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p4original.c:6
+6   {
+(gdb) n
+8     printf("enter two numbers\n");
+(gdb) n
+enter two numbers
+9     input(&a,&b);
+(gdb) n
+n
+10    add(a,b,&c);
+(gdb) n
+11    output(a,b,c);
+(gdb) n
+12    return 0;
+(gdb) n
+13  }
+(gdb) n
+__libc_start_main (main=0x5570d0c0076a <main>, argc=1, argv=0x7fff53699fe8, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7fff53699fd8) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) 

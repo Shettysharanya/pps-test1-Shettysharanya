@@ -2,7 +2,7 @@
 void input(int *a, int *b);
 void add(int a, int b, int *sum);
 void output(int a, int b, int sum);
-int main
+int main()
 {
   int a,b,c;
   printf("enter two numbers\n");
@@ -21,5 +21,5 @@ void add(int a, int b, int *sum)
 }
 void output(int a, int b, int sum)
 {
-  printf("sum of %d+%d",a,b,sum);
+  printf("sum of %d+%d=%d",a,b,sum);
 }
