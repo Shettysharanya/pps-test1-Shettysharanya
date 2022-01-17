@@ -3,7 +3,7 @@ int input()
 {
   int a;
 printf("enter a number\n");
-scanf("%d"&a);
+scanf("%d",&a);
 return a;
 }
 int find_sum(int a,int b)
