@@ -1,28 +1,34 @@
 #include<stdio.h>
-#include<math.h>
-
-int main() {
-	
-	int n;
-	double start,end,mid;
-	
-	printf("Enter a Number: ");
-	scanf("%d",&n);
-	
-	start = 0, end = n;
-	
-	while((end - start)>=0.000001){
-		
-		mid = (start + end)/2;
-		
-		if(mid*mid < n)
-			start = mid;
-		if(mid*mid >= n)
-			end = mid;
-		
-	}
-	
-	printf("Square Root of %d is %f",n,mid);
-	
+float input()
+{
+  float n;
+  printf("Enter a number to find the sqaure root of: ");
+  scanf("%f", &n);
+  return n;
 }
-Output
+
+float squareroot(float n)
+{
+  float x = n;
+  float y = 1;
+  float e = 0.000001;
+  while (x - y > e)
+  {
+    x  = (x + y) / 2;
+    y = n / x; 
+  }
+  return x;
+}
+void output(float n, float sres)
+{
+ 	 printf("Square root of given input %0.2f is = %0.2f \n", n, sres);
+}
+
+int main()
+{
+  float n, sres;
+  n = input();
+  sres = squareroot(n);
+  output(n, sres);
+  return 0;
+} 
